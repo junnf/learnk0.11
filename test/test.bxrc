@@ -1,7 +1,0 @@
-megs:4
-vgaromimage:file=$BXSHARE/VGABIOS-elpin-2.40
-romimage:file=$BXSHARE/BIOS-bochs-4-processors, address=0xf0000
-floppya:1_44=../testa.image,status=inserted
-boot:floppy
-floppy_command_delay: 50000
-log:bochsout.txt

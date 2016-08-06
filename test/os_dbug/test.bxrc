@@ -1,7 +1,0 @@
-megs:4
-romimage: file=$BXSHARE/BIOS-bochs-latest
-vgaromimage: file=$BXSHARE/VGABIOS-elpin-2.40
-floppya:1_44=a.img,status=inserted
-boot:floppy
-log:bochsout.txt
-debug_symbols: file="a.img"
