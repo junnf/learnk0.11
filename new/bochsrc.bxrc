@@ -2,7 +2,7 @@
 megs:4
 
 #filename of ROM images  
-romimage:file=$BXSHARE/BIOS-bochs-latest,address=Oxf000
+romimage:file=$BXSHARE/BIOS-bochs-latest,address=Ox0000
 vgaromimage:file=$BXSHARE/VGABIOS-elpin-2.40  
     
 #what disk images will be used  

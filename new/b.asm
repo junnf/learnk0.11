@@ -2,7 +2,7 @@ mov ax,0xb800
 mov es,ax
 mov ax,0x5000
 mov ds,ax
-mov byte [ds:0x00], 0xff
+mov byte [ds:0x00], 255
 mov ax, [ds:0x00]
 mov dx, 0x6000
 mov ds, dx 
@@ -14,21 +14,25 @@ mov byte [ds:0x00],al
 mov byte [ds:0x01],ah
 
 ;mov byte ax, [0x4000:0x00]
-mov ax,[ds:0x00]
+mov byte al,[ds:0x00]
+mov byte ah,0x00
 div bl
 ;商
 mov byte [ds:0x02],al
 ;余数
 mov byte [ds:0x03],ah
 mov byte al,[ds:0x02]
+add al,0x30
 mov byte [es:0x08], al
 
 mov byte [es:0x09], 0x07
 
 mov byte al,[ds:0x03]
+add al,0x30
 mov byte [es:0x0a],al
 mov byte [es:0x0b], 0x07
 mov byte al,[ds:0x01]
+add al, 0x30
 mov byte [es:0x0c], al
 mov byte [es:0x0d], 0x07
 
