@@ -50,22 +50,24 @@
 
 
 
-
-
-
-
 SECTION mbr align=16 vstart=0x7c00
     mov ax, 0
     mov ss, ax
     mov sp, ax
+    mov ax,write_data
 
     write_data:
+      push ax
       mov ax,0xb800
       mov es,ax
       mov byte [es:0x00], 'L'
       mov byte [es:0x01], 0x07
+      mov byte [es:0x02], 'M'
+      mov byte [es:0x03], 0x07
+      pop ax
       ret
-    call write_data
+
+    call ax
     infi: jmp near infi
 
     times 510-($-$$) db 0
