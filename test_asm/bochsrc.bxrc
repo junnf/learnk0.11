@@ -9,8 +9,8 @@ vgaromimage:file=$BXSHARE/VGABIOS-elpin-2.40
 floppya:1_44=a.img,status=inserted  
     
 #Choose the boot disk  
-boot:a
-ata0-master: type=disk, path="hard.img", mode=flat, cylinders=23, heads=16, spt=63
+boot:floppy
+# ata0-master: type=disk, path="hard.img", mode=flat, cylinders=40, heads=16, spt=63
     
 #where do we send log messages?  
 log:bochsout.txt  

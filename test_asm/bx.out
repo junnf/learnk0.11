@@ -1,0 +1,38 @@
+  107  dd if=boot.bin of=a.img bs=512 count=1
+  121  dd if=boot.bin of=a.img bs=512 count=1
+  321  dd if=boot.bin of=a.img bs=512 count=1
+  326  dd if=boot.bin of=hard.img bs=512 count=100
+  336  dd if=boot.bin of=hard.img seek=100 bs=512 count=1
+  338  dd if=hard.img of=test seek=100 bs=512 count=1
+  351  dd if=api.bin of=hard.img seek=100 bs=512 count=1
+  353  dd if=api.bin of=hard.img seek=100 bs=512 conv=notrunc
+  375  dd if=api.bin of=hard.img seek=100 bs=512 
+  433  dd if=api.bin of=hard.img seek=99 count=2 bs=512 
+  435  dd if=api.bin of=hard.img seek=99 count=2 bs=512 
+  443  dd if=c08_mbr.bin of=a.img count=1 bs=512 
+  455  dd if=c08.bin of=hard.img count=2 bs=512 
+  463  dd if=c08.bin of=hard.img count=2 bs=512  conv=notrunc
+  466  dd if=c08.bin of=hard.img seek=100 count=2 bs=512 conv=notrunc
+  523  dd if=api.bin of=hard.img seek=100 bs=512 
+  581  dd if=api.bin of=hard.img seek=99 count=2 bs=512 
+  583  dd if=api.bin of=hard.img seek=99 count=2 bs=512 
+  591  dd if=c08_mbr.bin of=a.img count=1 bs=512 
+  603  dd if=c08.bin of=hard.img count=2 bs=512 
+  611  dd if=c08.bin of=hard.img count=2 bs=512  conv=notrunc
+  614  dd if=c08.bin of=hard.img seek=100 count=2 bs=512 conv=notrunc
+  672  dd if=api.bin of=hard.img seek=100 bs=512 
+  730  dd if=api.bin of=hard.img seek=99 count=2 bs=512 
+  732  dd if=api.bin of=hard.img seek=99 count=2 bs=512 
+  740  dd if=c08_mbr.bin of=a.img count=1 bs=512 
+  752  dd if=c08.bin of=hard.img count=2 bs=512 
+  760  dd if=c08.bin of=hard.img count=2 bs=512  conv=notrunc
+  763  dd if=c08.bin of=hard.img seek=100 count=2 bs=512 conv=notrunc
+  822  dd if=api.bin of=hard.img seek=100 bs=512 
+  880  dd if=api.bin of=hard.img seek=99 count=2 bs=512 
+  882  dd if=api.bin of=hard.img seek=99 count=2 bs=512 
+  890  dd if=c08_mbr.bin of=a.img count=1 bs=512 
+  902  dd if=c08.bin of=hard.img count=2 bs=512 
+  910  dd if=c08.bin of=hard.img count=2 bs=512  conv=notrunc
+  913  dd if=c08.bin of=hard.img seek=100 count=2 bs=512 conv=notrunc
+ 1064  dd if=api.bin of=a.img count=1 bs=512 
+ 1083  history | grep 'dd if' > bx.out
