@@ -1,0 +1,16 @@
+#how much memory the emulated machine will have  
+megs:4
+
+#filename of ROM images  
+romimage:file=$BXSHARE/BIOS-bochs-latest,address=Ox0000
+vgaromimage:file=$BXSHARE/VGABIOS-elpin-2.40  
+    
+#what disk images will be used  
+floppya:1_44=boot.img,status=inserted  
+    
+#Choose the boot disk  
+boot:floppy
+# ata0-master: type=disk, path="hard.img", mode=flat, cylinders=40, heads=16, spt=63
+    
+#where do we send log messages?  
+log:bochsout.txt  
