@@ -34,54 +34,54 @@
 00000000000i[     ]   SB16 support: yes
 00000000000i[     ]   USB support: yes
 00000000000i[     ]   VGA extension support: vbe cirrus
-00000000000i[MEM0 ] allocated memory at 0xf687f008. after alignment, vector=0xf6880000
+00000000000i[MEM0 ] allocated memory at 0xf6931008. after alignment, vector=0xf6932000
 00000000000i[MEM0 ] 4.00MB
 00000000000i[MEM0 ] rom at 0xfffe0000/131072 ('/usr/share/bochs/BIOS-bochs-latest')
 00000000000i[MEM0 ] rom at 0xc0000/32768 ('/usr/share/bochs/VGABIOS-elpin-2.40')
 00000000000i[APIC?] set APIC ID to 0
 00000000000i[APIC0] 80686
 00000000000i[APIC0] local apic in CPU apicid=00 initializing
-00000000000i[     ] lt_dlhandle is 0xac2f5d0
+00000000000i[     ] lt_dlhandle is 0x9ee75c8
 00000000000i[PLGIN] loaded plugin libbx_unmapped.la
-00000000000i[     ] lt_dlhandle is 0xac2fac8
+00000000000i[     ] lt_dlhandle is 0x9ee7ac0
 00000000000i[PLGIN] loaded plugin libbx_biosdev.la
-00000000000i[     ] lt_dlhandle is 0xac2fc70
+00000000000i[     ] lt_dlhandle is 0x9ee7c68
 00000000000i[PLGIN] loaded plugin libbx_cmos.la
-00000000000i[     ] lt_dlhandle is 0xac30260
+00000000000i[     ] lt_dlhandle is 0x9ee8258
 00000000000i[PLGIN] loaded plugin libbx_dma.la
-00000000000i[     ] lt_dlhandle is 0xac30c90
+00000000000i[     ] lt_dlhandle is 0x9ee8c88
 00000000000i[PLGIN] loaded plugin libbx_pic.la
-00000000000i[     ] lt_dlhandle is 0xac30d18
+00000000000i[     ] lt_dlhandle is 0x9ee8d10
 00000000000i[PLGIN] loaded plugin libbx_vga.la
-00000000000i[     ] lt_dlhandle is 0xac316e0
+00000000000i[     ] lt_dlhandle is 0x9ee96d8
 00000000000i[PLGIN] loaded plugin libbx_floppy.la
-00000000000i[     ] lt_dlhandle is 0xac31f00
+00000000000i[     ] lt_dlhandle is 0x9ee9ef8
 00000000000i[PLGIN] loaded plugin libbx_harddrv.la
-00000000000i[     ] lt_dlhandle is 0xac43b98
+00000000000i[     ] lt_dlhandle is 0x9efbb90
 00000000000i[PLGIN] loaded plugin libbx_keyboard.la
-00000000000i[     ] lt_dlhandle is 0xac43cb0
+00000000000i[     ] lt_dlhandle is 0x9efbca8
 00000000000i[PLGIN] loaded plugin libbx_serial.la
-00000000000i[     ] lt_dlhandle is 0xac443c8
+00000000000i[     ] lt_dlhandle is 0x9efc3c0
 00000000000i[PLGIN] loaded plugin libbx_parallel.la
-00000000000i[     ] lt_dlhandle is 0xac44ee0
+00000000000i[     ] lt_dlhandle is 0x9efced8
 00000000000i[PLGIN] loaded plugin libbx_extfpuirq.la
-00000000000i[     ] lt_dlhandle is 0xac457b8
+00000000000i[     ] lt_dlhandle is 0x9efd7b0
 00000000000i[PLGIN] loaded plugin libbx_gameport.la
-00000000000i[     ] lt_dlhandle is 0xac45ce8
+00000000000i[     ] lt_dlhandle is 0x9efdce0
 00000000000i[PLGIN] loaded plugin libbx_speaker.la
-00000000000i[     ] lt_dlhandle is 0xac461f8
+00000000000i[     ] lt_dlhandle is 0x9efe1f0
 00000000000i[PLGIN] loaded plugin libbx_pci.la
-00000000000i[     ] lt_dlhandle is 0xac46998
+00000000000i[     ] lt_dlhandle is 0x9efe990
 00000000000i[PLGIN] loaded plugin libbx_pci2isa.la
-00000000000i[     ] lt_dlhandle is 0xac46fa0
+00000000000i[     ] lt_dlhandle is 0x9efef98
 00000000000i[PLGIN] loaded plugin libbx_pci_ide.la
-00000000000i[     ] lt_dlhandle is 0xac47110
+00000000000i[     ] lt_dlhandle is 0x9eff108
 00000000000i[PLGIN] loaded plugin libbx_acpi.la
 00000000000i[IOAP ] initializing I/O APIC
 00000000000i[IOAP ] set APIC ID to 1
 00000000000i[MEM0 ] Register memory access handlers: 0xfec00000 - 0xfec00fff
 00000000000i[CMOS ] Using local time for initial clock
-00000000000i[CMOS ] Setting initial clock to: Mon Aug 22 23:07:57 2016 (time0=1471878477)
+00000000000i[CMOS ] Setting initial clock to: Fri Nov  4 23:23:27 2016 (time0=1478273007)
 00000000000i[DMA  ] channel 4 used by cascade
 00000000000i[DMA  ] channel 2 used by Floppy Drive
 00000000000i[FDD  ] fd0: 'a.img' ro=0, h=2,t=80,spt=18
