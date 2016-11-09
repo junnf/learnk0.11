@@ -25,57 +25,65 @@ SECTION mbr align=16 vstart=0x7c00
          mov si,app_lba_start            ;程序在硬盘上的起始逻辑扇区号 
          xor bx,bx                       ;加载到DS:0x0000处 
          call read_hard_disk_0
-      
-         ;以下判断整个程序有多大
-         mov dx,[2]                      ;曾经把dx写成了ds，花了二十分钟排错 
-         mov ax,[0]
-         mov bx,512                      ;512字节每扇区
-         div bx
-         cmp dx,0
-                                         ;dx == 0时跳转 
-                                         ;dx为余数
-         jnz @1                          ;未除尽，因此结果比实际扇区数少1 
-         dec ax                          ;已经读了一个扇区，扇区总数减1 
-   @1:
-         cmp ax,0                        ;考虑实际长度小于等于512个字节的情况 
-         jz direct
-         
-         ;读取剩余的扇区
-         push ds                         ;以下要用到并改变DS寄存器 
 
-         mov cx,ax                       ;循环次数（剩余扇区数）
-   @2:
-         mov ax,ds
-         add ax,0x20                     ;得到下一个以512字节为边界的段地址
-         mov ds,ax  
-                              
-         xor bx,bx                       ;每次读时，偏移地址始终为0x0000 
-         inc si                          ;下一个逻辑扇区 
-         call read_hard_disk_0
-         loop @2                         ;循环读，直到读完整个功能程序 
-
-         pop ds                          ;恢复数据段基址到用户程序头部段 
-      
-         ;计算入口点代码段基址 
-   direct:
          mov dx,[0x08]
          mov ax,[0x06]
          call calc_segment_base
-         mov [0x06],ax                   ;回填修正后的入口点代码段基址 
+         mov [0x06], ax
+
+
+         jmp far [0x04]
       
-         ;开始处理段重定位表
-         mov cx,[0x0a]                   ;需要重定位的项目数量
-         mov bx,0x0c                     ;重定位表首地址
+         ;以下判断整个程序有多大
+         ; mov dx,[2]                      ;曾经把dx写成了ds，花了二十分钟排错 
+         ; mov ax,[0]
+         ; mov bx,512                      ;512字节每扇区
+         ; div bx
+         ; cmp dx,0
+                                         ;dx == 0时跳转 
+                                         ;dx为余数
+;          jnz @1                          ;未除尽，因此结果比实际扇区数少1 
+         ; dec ax                          ;已经读了一个扇区，扇区总数减1 
+   ; @1:
+         ; cmp ax,0                        ;考虑实际长度小于等于512个字节的情况 
+         ; jz direct
+         
+         ; ;读取剩余的扇区
+         ; push ds                         ;以下要用到并改变DS寄存器 
+
+         ; mov cx,ax                       ;循环次数（剩余扇区数）
+   ; @2:
+         ; mov ax,ds
+         ; add ax,0x20                     ;得到下一个以512字节为边界的段地址
+         ; mov ds,ax  
+                              
+         ; xor bx,bx                       ;每次读时，偏移地址始终为0x0000 
+         ; inc si                          ;下一个逻辑扇区 
+         ; call read_hard_disk_0
+         ; loop @2                         ;循环读，直到读完整个功能程序 
+
+         ; pop ds                          ;恢复数据段基址到用户程序头部段 
+      
+         ; ;计算入口点代码段基址 
+   ; direct:
+         ; mov dx,[0x08]
+         ; mov ax,[0x06]
+         ; call calc_segment_base
+         ; mov [0x06],ax                   ;回填修正后的入口点代码段基址 
+      
+         ; ;开始处理段重定位表
+         ; mov cx,[0x0a]                   ;需要重定位的项目数量
+         ; mov bx,0x0c                     ;重定位表首地址
           
- realloc:
-         mov dx,[bx+0x02]                ;32位地址的高16位 
-         mov ax,[bx]
-         call calc_segment_base
-         mov [bx],ax                     ;回填段的基址
-         add bx,4                        ;下一个重定位项（每项占4个字节） 
-         loop realloc 
+ ; realloc:
+         ; mov dx,[bx+0x02]                ;32位地址的高16位 
+         ; mov ax,[bx]
+         ; call calc_segment_base
+         ; mov [bx],ax                     ;回填段的基址
+         ; add bx,4                        ;下一个重定位项（每项占4个字节） 
+         ; loop realloc 
       
-         jmp far [0x04]                  ;转移到用户程序  
+         ; jmp far [0x04]                  ;转移到用户程序  
  
 ;-------------------------------------------------------------------------------
 read_hard_disk_0:                        ;从硬盘读取一个逻辑扇区
