@@ -31,6 +31,10 @@ SECTION mbr align=16 vstart=0x7c00
          call calc_segment_base
          mov [0x06], ax
 
+         mov dx,[0x0c]                ;32位地址的高16位 
+         mov ax,[0x0a]
+         call calc_segment_base
+         mov [0x0a],ax  
 
          jmp far [0x04]
       
