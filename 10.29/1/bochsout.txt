@@ -34,54 +34,54 @@
 00000000000i[     ]   SB16 support: yes
 00000000000i[     ]   USB support: yes
 00000000000i[     ]   VGA extension support: vbe cirrus
-00000000000i[MEM0 ] allocated memory at 0xf6890008. after alignment, vector=0xf6891000
+00000000000i[MEM0 ] allocated memory at 0xf6892008. after alignment, vector=0xf6893000
 00000000000i[MEM0 ] 4.00MB
 00000000000i[MEM0 ] rom at 0xfffe0000/131072 ('/usr/share/bochs/BIOS-bochs-latest')
 00000000000i[MEM0 ] rom at 0xc0000/32768 ('/usr/share/bochs/VGABIOS-elpin-2.40')
 00000000000i[APIC?] set APIC ID to 0
 00000000000i[APIC0] 80686
 00000000000i[APIC0] local apic in CPU apicid=00 initializing
-00000000000i[     ] lt_dlhandle is 0x99165d0
+00000000000i[     ] lt_dlhandle is 0x9f905d0
 00000000000i[PLGIN] loaded plugin libbx_unmapped.la
-00000000000i[     ] lt_dlhandle is 0x9916ac8
+00000000000i[     ] lt_dlhandle is 0x9f90ac8
 00000000000i[PLGIN] loaded plugin libbx_biosdev.la
-00000000000i[     ] lt_dlhandle is 0x9916c70
+00000000000i[     ] lt_dlhandle is 0x9f90c70
 00000000000i[PLGIN] loaded plugin libbx_cmos.la
-00000000000i[     ] lt_dlhandle is 0x9917260
+00000000000i[     ] lt_dlhandle is 0x9f91260
 00000000000i[PLGIN] loaded plugin libbx_dma.la
-00000000000i[     ] lt_dlhandle is 0x9917c90
+00000000000i[     ] lt_dlhandle is 0x9f91c90
 00000000000i[PLGIN] loaded plugin libbx_pic.la
-00000000000i[     ] lt_dlhandle is 0x9917d18
+00000000000i[     ] lt_dlhandle is 0x9f91d18
 00000000000i[PLGIN] loaded plugin libbx_vga.la
-00000000000i[     ] lt_dlhandle is 0x99186e0
+00000000000i[     ] lt_dlhandle is 0x9f926e0
 00000000000i[PLGIN] loaded plugin libbx_floppy.la
-00000000000i[     ] lt_dlhandle is 0x9918f00
+00000000000i[     ] lt_dlhandle is 0x9f92f00
 00000000000i[PLGIN] loaded plugin libbx_harddrv.la
-00000000000i[     ] lt_dlhandle is 0x992ab98
+00000000000i[     ] lt_dlhandle is 0x9fa4b98
 00000000000i[PLGIN] loaded plugin libbx_keyboard.la
-00000000000i[     ] lt_dlhandle is 0x992acb0
+00000000000i[     ] lt_dlhandle is 0x9fa4cb0
 00000000000i[PLGIN] loaded plugin libbx_serial.la
-00000000000i[     ] lt_dlhandle is 0x992b3c8
+00000000000i[     ] lt_dlhandle is 0x9fa53c8
 00000000000i[PLGIN] loaded plugin libbx_parallel.la
-00000000000i[     ] lt_dlhandle is 0x992bee0
+00000000000i[     ] lt_dlhandle is 0x9fa5ee0
 00000000000i[PLGIN] loaded plugin libbx_extfpuirq.la
-00000000000i[     ] lt_dlhandle is 0x992c7b8
+00000000000i[     ] lt_dlhandle is 0x9fa67b8
 00000000000i[PLGIN] loaded plugin libbx_gameport.la
-00000000000i[     ] lt_dlhandle is 0x992cce8
+00000000000i[     ] lt_dlhandle is 0x9fa6ce8
 00000000000i[PLGIN] loaded plugin libbx_speaker.la
-00000000000i[     ] lt_dlhandle is 0x992d1f8
+00000000000i[     ] lt_dlhandle is 0x9fa71f8
 00000000000i[PLGIN] loaded plugin libbx_pci.la
-00000000000i[     ] lt_dlhandle is 0x992d998
+00000000000i[     ] lt_dlhandle is 0x9fa7998
 00000000000i[PLGIN] loaded plugin libbx_pci2isa.la
-00000000000i[     ] lt_dlhandle is 0x992dfa0
+00000000000i[     ] lt_dlhandle is 0x9fa7fa0
 00000000000i[PLGIN] loaded plugin libbx_pci_ide.la
-00000000000i[     ] lt_dlhandle is 0x992e110
+00000000000i[     ] lt_dlhandle is 0x9fa8110
 00000000000i[PLGIN] loaded plugin libbx_acpi.la
 00000000000i[IOAP ] initializing I/O APIC
 00000000000i[IOAP ] set APIC ID to 1
 00000000000i[MEM0 ] Register memory access handlers: 0xfec00000 - 0xfec00fff
 00000000000i[CMOS ] Using local time for initial clock
-00000000000i[CMOS ] Setting initial clock to: Fri Nov 11 22:55:10 2016 (time0=1478876110)
+00000000000i[CMOS ] Setting initial clock to: Fri Nov 11 23:39:45 2016 (time0=1478878785)
 00000000000i[DMA  ] channel 4 used by cascade
 00000000000i[DMA  ] channel 2 used by Floppy Drive
 00000000000i[FDD  ] fd0: 'boot.img' ro=0, h=2,t=80,spt=18
@@ -185,35 +185,35 @@
 00009378508i[BIOS ] ata0-0: PCHS=203/16/63 translation=none LCHS=203/16/63
 00013226499i[BIOS ] IDE time out
 00019324295i[BIOS ] Booting from 0000:7c00
-00021640000i[     ] cpu loop quit, shutting down simulator
-00021640000i[CPU0 ] CPU is in real mode (active)
-00021640000i[CPU0 ] CS.d_b = 16 bit
-00021640000i[CPU0 ] SS.d_b = 16 bit
-00021640000i[CPU0 ] EFER   = 0x00000000
-00021640000i[CPU0 ] | RAX=0000000000001002  RBX=0000000000000000
-00021640000i[CPU0 ] | RCX=0000000000000000  RDX=0000000000000000
-00021640000i[CPU0 ] | RSP=0000000000000000  RBP=0000000000000000
-00021640000i[CPU0 ] | RSI=00000000ffff0064  RDI=0000000000080000
-00021640000i[CPU0 ] |  R8=0000000000000000   R9=0000000000000000
-00021640000i[CPU0 ] | R10=0000000000000000  R11=0000000000000000
-00021640000i[CPU0 ] | R12=0000000000000000  R13=0000000000000000
-00021640000i[CPU0 ] | R14=0000000000000000  R15=0000000000000000
-00021640000i[CPU0 ] | IOPL=0 id vip vif ac vm rf nt of df if tf sf zf AF PF cf
-00021640000i[CPU0 ] | SEG selector     base    limit G D
-00021640000i[CPU0 ] | SEG sltr(index|ti|rpl)     base    limit G D
-00021640000i[CPU0 ] |  CS:0000( 0004| 0|  0) 00000000 0000ffff 0 0
-00021640000i[CPU0 ] |  DS:1000( 0005| 0|  0) 00010000 0000ffff 0 0
-00021640000i[CPU0 ] |  SS:0000( 0005| 0|  0) 00000000 0000ffff 0 0
-00021640000i[CPU0 ] |  ES:1000( 0005| 0|  0) 00010000 0000ffff 0 0
-00021640000i[CPU0 ] |  FS:0000( 0005| 0|  0) 00000000 0000ffff 0 0
-00021640000i[CPU0 ] |  GS:0000( 0005| 0|  0) 00000000 0000ffff 0 0
-00021640000i[CPU0 ] |  MSR_FS_BASE:0000000000000000
-00021640000i[CPU0 ] |  MSR_GS_BASE:0000000000000000
-00021640000i[CPU0 ] | RIP=0000000000001e04 (0000000000001e04)
-00021640000i[CPU0 ] | CR0=0x60000010 CR1=0x0 CR2=0x0000000000000000
-00021640000i[CPU0 ] | CR3=0x00000000 CR4=0x00000000
-00021640000i[CPU0 ] >> add byte ptr ds:[bx+si], al : 0000
-00021640000i[CMOS ] Last time is 1478876120 (Fri Nov 11 22:55:20 2016)
-00021640000i[XGUI ] Exit
-00021640000i[     ] restoring default signal behavior
-00021640000i[CTRL ] quit_sim called with exit code 1
+00078778000i[     ] cpu loop quit, shutting down simulator
+00078778000i[CPU0 ] CPU is in real mode (active)
+00078778000i[CPU0 ] CS.d_b = 16 bit
+00078778000i[CPU0 ] SS.d_b = 16 bit
+00078778000i[CPU0 ] EFER   = 0x00000000
+00078778000i[CPU0 ] | RAX=000000000000b800  RBX=0000000000000f6c
+00078778000i[CPU0 ] | RCX=000000000000001a  RDX=00000000000003d5
+00078778000i[CPU0 ] | RSP=000000000000fff2  RBP=0000000000000000
+00078778000i[CPU0 ] | RSI=00000000ffff0fa0  RDI=0000000000080f00
+00078778000i[CPU0 ] |  R8=0000000000000000   R9=0000000000000000
+00078778000i[CPU0 ] | R10=0000000000000000  R11=0000000000000000
+00078778000i[CPU0 ] | R12=0000000000000000  R13=0000000000000000
+00078778000i[CPU0 ] | R14=0000000000000000  R15=0000000000000000
+00078778000i[CPU0 ] | IOPL=0 id vip vif ac vm rf nt of df if tf sf zf af PF cf
+00078778000i[CPU0 ] | SEG selector     base    limit G D
+00078778000i[CPU0 ] | SEG sltr(index|ti|rpl)     base    limit G D
+00078778000i[CPU0 ] |  CS:1003( 0004| 0|  0) 00010030 0000ffff 0 0
+00078778000i[CPU0 ] |  DS:b800( 0005| 0|  0) 000b8000 0000ffff 0 0
+00078778000i[CPU0 ] |  SS:0000( 0005| 0|  0) 00000000 0000ffff 0 0
+00078778000i[CPU0 ] |  ES:b800( 0005| 0|  0) 000b8000 0000ffff 0 0
+00078778000i[CPU0 ] |  FS:0000( 0005| 0|  0) 00000000 0000ffff 0 0
+00078778000i[CPU0 ] |  GS:0000( 0005| 0|  0) 00000000 0000ffff 0 0
+00078778000i[CPU0 ] |  MSR_FS_BASE:0000000000000000
+00078778000i[CPU0 ] |  MSR_GS_BASE:0000000000000000
+00078778000i[CPU0 ] | RIP=000000000000008b (000000000000008b)
+00078778000i[CPU0 ] | CR0=0x60000010 CR1=0x0 CR2=0x0000000000000000
+00078778000i[CPU0 ] | CR3=0x00000000 CR4=0x00000000
+00078778000i[CPU0 ] >> add bx, 0x0002 : 83C302
+00078778000i[CMOS ] Last time is 1478878824 (Fri Nov 11 23:40:24 2016)
+00078778000i[XGUI ] Exit
+00078778000i[     ] restoring default signal behavior
+00078778000i[CTRL ] quit_sim called with exit code 1

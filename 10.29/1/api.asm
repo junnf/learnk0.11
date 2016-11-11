@@ -1,16 +1,25 @@
 SECTION header vstart=0
     program_length dd program_end
     code_entry dw start
-               dd section.code.start
+               dd section.code_func.start
 
-    code_segment dd section.code_func.start ;[0x0a]
+    code_segment dd section.code.start ;[0x0a]
 
-SECTion code align=16 vstart=0
+SECTION code align=16 vstart=0
 start:
-    jmp far [code_segment]
+    mov ax,0xb800
+    mov es,ax
+    mov byte [es:0x00],'A'
+    mov byte [es:0x01],0x07
 
 
 SECTION code_func align=16 vstart=0
+    push es
+    mov ax,0xb800
+    mov es,ax
+    mov byte [es:0x00],'B'
+    mov byte [es:0x01],0x07
+    pop es
 
 put:
     mov byte cl,98
