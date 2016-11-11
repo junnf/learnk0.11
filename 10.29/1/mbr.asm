@@ -36,7 +36,7 @@ SECTION mbr align=16 vstart=0x7c00
          call calc_segment_base
          mov [0x0a],ax  
 
-         jmp far [0x04]
+         jmp far [0x0a]
       
          ;以下判断整个程序有多大
          ; mov dx,[2]                      ;曾经把dx写成了ds，花了二十分钟排错 
