@@ -1,32 +1,44 @@
 SECTION header vstart=0
     program_length dd program_end
     code_entry dw start
-               dd section.code_func.start
+               dd section.code.start
 
-    code_segment dd section.code.start ;[0x0a]
+    ;jmp far
+    code_entry1 dw put 
+                dd section.code_func.start
+
+    realloc_tbl_len dw (header_end-code_segment)/4
+
+    code_segment dd section.code.start ;[0x0c]
+    code_segment1 dd section.code_func.start ;[0x10]
+    header_end:
 
 SECTION code align=16 vstart=0
 start:
-    mov ax,0xb800
-    mov es,ax
-    mov byte [es:0x00],'A'
-    mov byte [es:0x01],0x07
+    ; mov ax,0xb800
+    ; mov es,ax
+    ; mov byte [es:0x00],'A'
+    ; mov byte [es:0x01],0x07
+    ; pop es
+    jmp far [0x10]
 
 
 SECTION code_func align=16 vstart=0
-    push es
+    ; push es
+    ; mov ax,0xb800
+    ; mov es,ax
+    ; mov byte [es:0x00],'B'
+    ; mov byte [es:0x01],0x07
+    ; pop es
+
+put:
     mov ax,0xb800
     mov es,ax
     mov byte [es:0x00],'B'
     mov byte [es:0x01],0x07
-    pop es
 
-put:
-    mov byte cl,98
-    call put_char
-    mov byte cl,99
-    call put_char
-    jmp put
+    ; mov byte cl,'8'
+    ; call put_char
 
 
 put_char:                                ;显示一个字符
@@ -121,7 +133,6 @@ put_char:                                ;显示一个字符
     pop ax
 
     ret
-
 
 SECTION data align=16 vstart=0
     msg db "hello every one !"

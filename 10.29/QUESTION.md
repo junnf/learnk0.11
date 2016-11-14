@@ -12,3 +12,5 @@ floppy->disk(100 spec) seek 100spec
 #####2.endian限制,hexdump阅读困难,可hexdump -C textfile
 
 #####3.执行其他asm文件,及段重定位
+
+#####4.jmp far other_segment需要在header segment加入 address及entry
