@@ -128,68 +128,51 @@ start:
 
       mov bx,inst_msg                    ;显示安装信息 
       call put_string
-
-      xor al,al
-      or al,0x80
-      out 0x70,al
-      in al,0x71 
-      push ax
       
-      mov ax,0xb800
+      mov al,0x70
+      mov bl,4
+      mul bl                             ;计算0x70号中断在IVT中的偏移
+      mov bx,ax                          
+
+      ;cli                                ;防止改动期间发生新的0x70号中断
+
+      push es
+      mov ax,0x0000
       mov es,ax
-
-      pop ax
-      call bcd_to_ascii
-      mov bx,12*160 + 36*2               ;从屏幕上的12行36列开始显示
-
-      mov [es:bx],ah
-      mov [es:bx+2],al 
-
-   ;    mov al,0x70
-      ; mov bl,4
-      ; mul bl                             ;计算0x70号中断在IVT中的偏移
-      ; mov bx,ax                          
-
-      ; cli                                ;防止改动期间发生新的0x70号中断
-
-      ; push es
-      ; mov ax,0x0000
-      ; mov es,ax
-      ; mov word [es:bx],new_int_0x70      ;偏移地址。
+      mov word [es:bx],new_int_0x70      ;偏移地址。
                                           
-      ; mov word [es:bx+2],cs              ;段地址
-      ; pop es
+      mov word [es:bx+2],cs              ;段地址
+      pop es
 
-      ; mov al,0x0b                        ;RTC寄存器B
-      ; or al,0x80                         ;阻断NMI 
-      ; out 0x70,al
-      ; mov al,0x12                        ;设置寄存器B，禁止周期性中断，开放更 
-      ; out 0x71,al                        ;新结束后中断，BCD码，24小时制 
+      mov al,0x0b                        ;RTC寄存器B
+      or al,0x80                         ;阻断NMI 
+      out 0x70,al
+      mov al,0x12                        ;设置寄存器B，禁止周期性中断，开放更 
+      out 0x71,al                        ;新结束后中断，BCD码，24小时制 
 
-      ; mov al,0x0c
-      ; out 0x70,al
-      ; in al,0x71                         ;读RTC寄存器C，复位未决的中断状态
+      mov al,0x0c
+      out 0x70,al
+      in al,0x71                         ;读RTC寄存器C，复位未决的中断状态
 
-      ; in al,0xa1                         ;读8259从片的IMR寄存器 
-      ; and al,0xfe                        ;清除bit 0(此位连接RTC)
-      ; out 0xa1,al                        ;写回此寄存器 
+      in al,0xa1                         ;读8259从片的IMR寄存器 
+      and al,0xfe                        ;清除bit 0(此位连接RTC)
+      out 0xa1,al                        ;写回此寄存器 
 
-      ; sti                                ;重新开放中断 
+      sti                                ;重新开放中断 
 
-      ; mov bx,done_msg                    ;显示安装完成信息 
-      ; call put_string
+      mov bx,done_msg                    ;显示安装完成信息 
+      call put_string
 
-      ; mov bx,tips_msg                    ;显示提示信息
-      ; call put_string
+      mov bx,tips_msg                    ;显示提示信息
+      call put_string
       
-      ; mov cx,0xb800
-      ; mov ds,cx
-      ; mov byte [12*160 + 33*2],'@'       ;屏幕第12行，35列
+      mov cx,0xb800
+      mov ds,cx
+      mov byte [12*160 + 33*2],'@'       ;屏幕第12行，35列
        
- ; .idle:
-      ; hlt                                ;使CPU进入低功耗状态，直到用中断唤醒
-      ; not byte [12*160 + 33*2+1]         ;反转显示属性 
-      ; jmp .idle
+ .idle:
+       hlt                                ;使CPU进入低功耗状态，直到用中断唤醒
+       jmp .idle
 
 ;-------------------------------------------------------------------------------
 put_string:                              ;显示串(0结尾)。
